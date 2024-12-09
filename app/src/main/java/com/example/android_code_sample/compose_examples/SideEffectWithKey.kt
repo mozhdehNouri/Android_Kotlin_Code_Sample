@@ -1,11 +1,16 @@
 package com.example.android_code_sample.compose_examples
 
-import android.util.Log
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.InternalComposeApi
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.RememberObserver
 import androidx.compose.runtime.remember
+
+/*
+* sometimes our we wanna implement some logic in effect which is not necessary to run
+* in LaunchEffect and not need to release any resource to implement in DisposableEffect
+* so we can use this effect
+*
+* */
 
 
 @Composable

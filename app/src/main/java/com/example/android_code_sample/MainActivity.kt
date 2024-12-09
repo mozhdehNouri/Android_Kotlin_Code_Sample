@@ -26,42 +26,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Android_Code_SampleTheme {
-                var counter by remember { mutableIntStateOf(0) }
-
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-                    if (counter < 16) {
-                        Greeting(counter = counter,  onCounterChanged = { value ->
-                            counter = value +1
-                        })
-                    } else {
-                        REDSC()
-                    }
                 }
             }
         }
     }
-}
-
-@Composable
-fun Greeting(counter: Int, onCounterChanged: (Int) -> Unit) {
-
-    SideEffectWithKey(counter) {
-        Log.d("checkCounterRecomposeScope", counter.toString() )
-    }
-
-    Button(onClick = {
-        onCounterChanged(counter)
-    }) {
-    }
-
-}
-
-@Composable
-fun REDSC(modifier: Modifier = Modifier) {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Red)
-    )
 }
